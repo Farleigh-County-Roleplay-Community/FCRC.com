@@ -33,12 +33,6 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       overflow-y:auto;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.light {
-      background: #fdfdfd;
-      color:#07203a;
     }
 
     /* Animated background gradient layers */
@@ -65,24 +59,30 @@
       padding:12px 18px;
       display:flex; align-items:center; gap:18px;
     }
-    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
     .brand img{ width:56px; height:56px; border-radius:10px; object-fit:contain; }
-    .brand h1{ font-size:18px; letter-spacing:0.6px; margin-bottom:-2px; text-shadow: 0 6px 22px rgba(255,138,0,0.06); }
+    .brand h1{
+      font-size:18px; letter-spacing:0.6px; margin-bottom: -2px;
+      text-shadow: 0 6px 22px rgba(255,138,0,0.06);
+    }
     .brand p{ font-size:12px; color:var(--muted) }
 
     nav.main-nav{ margin-left:12px; display:flex; gap:10px; align-items:center; flex:1 }
     nav.main-nav a{
-      color:#cfe7ff; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:14px;
+      color: #cfe7ff; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:14px;
       transition: all .18s ease;
     }
-    nav.main-nav a:hover{ background:linear-gradient(90deg, rgba(255,138,0,0.08), rgba(43,107,255,0.06)); transform:translateY(-2px) }
+    nav.main-nav a:hover{ background: linear-gradient(90deg, rgba(255,138,0,0.08), rgba(43,107,255,0.06)); transform:translateY(-2px) }
 
     /* More dropdown */
     .more{ position:relative; }
     .more .dropdown{
       position:absolute; top:44px; left:0; min-width:220px; background:var(--card);
       border-radius:10px; padding:8px; border:1px solid var(--glass-border);
-      box-shadow: 0 8px 40px rgba(2,6,23,0.6); display:none; backdrop-filter: blur(8px);
+      box-shadow: 0 8px 40px rgba(2,6,23,0.6); display:none;
+      backdrop-filter: blur(8px);
     }
     .more:hover .dropdown{ display:block; }
     .dropdown a{ display:block; padding:10px; color:#dbeeff; text-decoration:none; border-radius:8px; font-size:14px }
@@ -90,22 +90,89 @@
 
     .controls{ display:flex; gap:12px; align-items:center }
     .btn-discord{
-      background:linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px; border:none; box-shadow:var(--text-glow);
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px; border:none; box-shadow: var(--text-glow);
       cursor:pointer; text-decoration:none;
     }
-    .toggle{ width:46px; height:28px; background:rgba(255,255,255,0.03); border-radius:20px; padding:4px;
-      display:flex; align-items:center; gap:6px; border:1px solid rgba(255,255,255,0.04); cursor:pointer }
-    .toggle .dot{ width:18px; height:18px; background:#fff;border-radius:50%; box-shadow:0 6px 18px rgba(43,107,255,0.08) }
+    .toggle {
+      width:46px; height:28px; background:rgba(255,255,255,0.03); border-radius:20px; padding:4px;
+      display:flex; align-items:center; gap:6px; border:1px solid rgba(255,255,255,0.04);
+      cursor:pointer;
+    }
+    .toggle .dot{ width:18px; height:18px; background:#fff;border-radius:50%; box-shadow: 0 6px 18px rgba(43,107,255,0.08) }
 
-    /* (other CSS unchanged for brevity) */
+    /* HERO */
+    .hero{
+      margin-top:20px;
+      display:grid; grid-template-columns: 1fr; gap:20px; align-items:start;
+      padding:26px; border-radius:16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border); backdrop-filter: blur(10px);
+    }
+    .hero-inner{ display:flex; gap:22px; align-items:center; }
+    .hero-text h2{
+      font-size:48px; line-height:1; letter-spacing:-1px;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 18px 40px rgba(43,107,255,0.06);
+    }
+    .hero-text p.lead{ margin-top:10px; color:var(--muted); font-size:16px }
+    .hero-cta{ margin-top:18px; display:flex; gap:12px; }
+    .cta-primary{ padding:12px 20px; border-radius:12px; background:linear-gradient(90deg,var(--accent1),#ffb36b); color:#021028; font-weight:800; text-decoration:none }
+    .cta-secondary{ padding:10px 16px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted); text-decoration:none }
+
+    .stats-row{ margin-top:18px; display:flex; gap:14px; flex-wrap:wrap }
+    .stat{
+      min-width:160px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px; padding:12px; border:1px solid rgba(255,255,255,0.02);
+      display:flex; gap:12px; align-items:center;
+    }
+    .stat .ico{ width:48px; height:48px; border-radius:10px; background:linear-gradient(90deg,var(--accent2),var(--accent1)); display:flex; align-items:center; justify-content:center; font-weight:900 }
+    .stat .txt{ font-size:14px; color:var(--muted) }
+    .stat strong{ display:block; color:#fff; font-size:18px; margin-top:2px }
+
+    /* sections */
+    .section-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; margin-top:20px }
+    .card{
+      background:var(--card); padding:16px; border-radius:14px; border:1px solid var(--glass-border); min-height:120px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    }
+    .card h3{ margin-bottom:8px; color:#fff }
+    .card p{ color:var(--muted); font-size:14px; line-height:1.45 }
+
+    /* departments & rules */
+    .departments{ margin-top:18px; display:grid; grid-template-columns: repeat(4, 1fr); gap:14px }
+    .dept-card{ background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.02) }
+    .rules{ margin-top:20px; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006)); border:1px solid rgba(255,255,255,0.02) }
+
+    /* events */
+    .events{ margin-top:18px; min-height:60px; color:var(--muted); display:flex; align-items:center; justify-content:center }
+
+    /* footer */
+    footer.site-footer{
+      margin-top:36px; padding:22px; border-radius:12px; text-align:center; color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02); background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))
+    }
+    footer .small{ font-size:13px }
+
+    /* responsive */
+    @media (max-width:1000px){
+      .section-grid{ grid-template-columns: 1fr 1fr }
+      .departments{ grid-template-columns: repeat(2,1fr) }
+      .hero-text h2{ font-size:36px }
+    }
+    @media (max-width:640px){
+      header.site-header{ flex-direction:column; align-items:flex-start }
+      nav.main-nav{ flex-wrap:wrap; gap:6px }
+      .section-grid{ grid-template-columns: 1fr }
+      .departments{ grid-template-columns: 1fr }
+    }
   </style>
 </head>
 <body>
   <div class="bg-anim" aria-hidden="true"></div>
 
   <div class="wrap">
-    <!-- HEADER (unchanged except Apps link fixed) -->
+    <!-- HEADER -->
     <header class="site-header">
       <div class="brand">
         <img src="images/logo.png" alt="FCRC logo">
@@ -114,6 +181,7 @@
           <p>Realism • Integrity • Immersion</p>
         </div>
       </div>
+
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about_us.html">About</a>
@@ -121,108 +189,193 @@
         <a href="announcements.html">Announcements</a>
         <a href="social_media.html">Social</a>
         <a href="faq.html">FAQ</a>
+
         <div class="more">
-          <a href="#">More ▾</a>
-          <div class="dropdown">
+          <a href="#" aria-haspopup="true">More ▾</a>
+          <div class="dropdown" role="menu" aria-label="More menu">
             <a href="store.html">Store</a>
             <a href="ownership.html">Ownership</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSebcHzw4gd8Ec5rLVa4i7kGgOrLHHqnMWFrpkMaP30YzCB8aw/viewform?usp=sharing&ouid=100521486573525812908" target="_blank">Applications</a>
+            <a href="applications.html">Applications</a>
             <a href="chain_of_command.html">Chain of Command</a>
             <a href="merch.html">Merch</a>
           </div>
         </div>
       </nav>
+
       <div class="controls">
-        <a class="btn-discord" href="https://discord.gg/KzUYBUUzMr" target="_blank">Join Discord</a>
-        <div class="toggle" id="themeToggle"><div class="dot" id="toggleDot"></div></div>
+        <a class="btn-discord" href="https://discord.gg/KzUYBUUzMr" target="_blank" rel="noopener">Join Discord</a>
+        <div class="toggle" id="themeToggle" title="Toggle light/dark">
+          <div class="dot" id="toggleDot"></div>
+        </div>
       </div>
     </header>
 
-    <!-- OWNERSHIP UPDATE -->
-    <section class="card" style="margin-top:18px">
-      <h3>Ownership Team</h3>
-      <p><strong>Chairman:</strong> greyvader0512<br>
-      <strong>Deputy Chairman:</strong> ahmetfpsz_<br>
-      <strong>Assistant Chairmen:</strong> Grandpa Joey & Problemfoxking2<br>
-      <strong>Senior Foundation Members:</strong> chunkmonster199 & youknowmeyoukno</p>
+    <!-- HERO -->
+    <section class="hero" id="home-hero">
+      <div class="hero-inner">
+        <div style="flex:1">
+          <div class="hero-text">
+            <h2>Farleigh County Roleplay Community</h2>
+            <p class="lead">Craft your legacy. Serve with honor. Experience immersive, realistic roleplay built on discipline and camaraderie.</p>
+            <div class="hero-cta">
+              <a class="cta-primary" href="applications.html">Join the next cohort</a>
+              <a class="cta-secondary" href="rules.html">Read our rules</a>
+            </div>
+            <div class="stats-row" style="margin-top:18px">
+              <div class="stat"><div class="ico">🎯</div><div class="txt">Upcoming Member Goal<strong>100</strong></div></div>
+              <div class="stat"><div class="ico">📅</div><div class="txt">Daily SSU's<strong>Active</strong></div></div>
+              <div class="stat"><div class="ico">🏆</div><div class="txt">High-quality assets<strong>Top-tier</strong></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width:360px; text-align:center">
+          <img src="images/webbanner.png" alt="web banner" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,0.03)">
+        </div>
+      </div>
     </section>
 
-    <!-- DEPARTMENTS UPDATE -->
+    <!-- UPCOMING EVENTS -->
+    <section class="card" style="margin-top:18px">
+      <h3>Upcoming Events</h3>
+      <div class="events" id="eventsArea">Currently none scheduled — stay tuned.</div>
+    </section>
+
+    <!-- 3 large rounded boxes -->
+    <div class="section-grid" style="margin-top:18px">
+      <div class="card">
+        <h3>About Us</h3>
+        <p>Farleigh County Roleplay is dedicated to delivering immersive emergency services roleplay with a focus on realism, fairness and administrative excellence. We train staff and supporters to a high standard, and cultivate enduring communities.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ownership Team</h3>
+        <p>Our ownership team oversees the strategic direction of the community and supports staff with governance, policy, and resources.</p>
+      </div>
+
+      <div class="card">
+        <h3>Important Links</h3>
+        <p><strong>Discord:</strong> <a href="https://discord.gg/KzUYBUUzMr" style="color:#dbeeff">discord.gg/KzUYBUUzMr</a><br>
+        <strong>Applications:</strong> <a href="applications.html" style="color:#dbeeff">Apply here</a></p>
+      </div>
+    </div>
+
+    <!-- What we offer -->
+    <section class="card" style="margin-top:18px">
+      <h3>What We Offer</h3>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:12px">
+        <div class="dept-card"><h4>Friendly community</h4><p>Supportive environment for all skill levels.</p></div>
+        <div class="dept-card"><h4>Daily SSU</h4><p>Consistent structured sessions to improve roleplay.</p></div>
+        <div class="dept-card"><h4>Active staff</h4><p>Responsive moderation and professional training.</p></div>
+        <div class="dept-card"><h4>Custom LIVs</h4><p>High-quality, custom assets for immersive RP.</p></div>
+        <div class="dept-card"><h4>Partnerships</h4><p>Collaborations with other communities and services.</p></div>
+        <div class="dept-card"><h4>Immersive roleplay</h4><p>Realistic scenarios and structured events.</p></div>
+      </div>
+    </section>
+
+    <!-- Departments -->
     <section style="margin-top:18px">
       <h3 style="margin-bottom:12px">Departments</h3>
       <div class="departments">
-        <div class="dept-card"><h4>Farleigh City Police Service (FCPS)</h4></div>
-        <div class="dept-card"><h4>Maddison Police Service (MPS)</h4></div>
-        <div class="dept-card"><h4>Harlsborough Police Service (HPS)</h4></div>
-        <div class="dept-card"><h4>Farleigh County Sheriff’s Service (FCSS)</h4></div>
-        <div class="dept-card"><h4>RCMP</h4></div>
-        <div class="dept-card"><h4>Farleigh County Fire Service (FCFS)</h4></div>
-        <div class="dept-card"><h4>Farleigh County Paramedic Association (FCPA)</h4></div>
-        <div class="dept-card"><h4>Saskatchewan Ministry Of Highways (SMOH)</h4></div>
+        <div class="dept-card"><h4>Police</h4><p>Law enforcement and patrol duties</p></div>
+        <div class="dept-card"><h4>Fire / EMS</h4><p>Emergency response & rescue</p></div>
+        <div class="dept-card"><h4>Operations</h4><p>Session coordination & logistics</p></div>
+        <div class="dept-card"><h4>Civilians</h4><p>Roleplay and community activities</p></div>
       </div>
-      <p style="margin-top:12px; color:var(--muted)">View Civilian Operations & other departments in our server!</p>
     </section>
 
-    <!-- FOOTER unchanged -->
+    <!-- Community rules short -->
+    <section class="rules" style="margin-top:18px">
+      <h3>Community Rules (Short)</h3>
+      <ul style="margin-top:10px; color:var(--muted); line-height:1.6">
+        <li>Respect everyone — no harassment.</li>
+        <li>Do not exploit, cheat, or use third-party mods to gain advantage.</li>
+        <li>Maintain roleplay realism — avoid FRP/RDM/VDM.</li>
+        <li>Follow staff instructions during scenes.</li>
+        <li>Adhere to Roblox Terms of Service at all times.</li>
+      </ul>
+    </section>
+
+    <!-- Announcements / Discord widget -->
+    <section style="margin-top:18px; display:flex; gap:18px; flex-wrap:wrap">
+      <div class="card" style="flex:1; min-width:300px">
+        <h3>Announcements</h3>
+        <div id="announcements" style="margin-top:12px; color:var(--muted)">Live announcements will appear here.</div>
+      </div>
+      <div class="card" style="width:320px">
+        <h3>Discord</h3>
+        <div id="discordWidget" style="margin-top:10px; color:var(--muted)">Loading server status…</div>
+      </div>
+    </section>
+
     <footer class="site-footer">
-      <div><img src="images/logo.png" alt="logo" style="height:20px"> <span class="small">© FCRC 2025 — All rights reserved</span></div>
+      <div><img src="images/logo.png" alt="logo" style="height:20px; vertical-align:middle"> <span class="small">© FCRC 2025 — All rights reserved</span></div>
     </footer>
+
   </div>
 
   <script>
-    // THEME TOGGLE FIX
+    // THEME TOGGLE (light/dark) - minimal
     (function(){
       const toggle = document.getElementById('themeToggle');
       const dot = document.getElementById('toggleDot');
       const current = localStorage.getItem('fcrc-theme') || 'dark';
-      if(current==='light'){ document.body.classList.add('light'); dot.style.background='#021028'; }
-      toggle.addEventListener('click', ()=>{
-        if(document.body.classList.contains('light')){
-          document.body.classList.remove('light'); dot.style.background='#fff';
-          localStorage.setItem('fcrc-theme','dark');
+      function applyTheme(t){
+        if(t==='light'){
+          document.documentElement.style.setProperty('--bg-dark','#fff');
+          document.documentElement.style.setProperty('--bg-alt','#f3f4f6');
+          document.body.style.color='#07203a';
+          dot.style.background='#021028';
         } else {
-          document.body.classList.add('light'); dot.style.background='#021028';
-          localStorage.setItem('fcrc-theme','light');
+          document.documentElement.style.removeProperty('--bg-dark');
+          document.documentElement.style.removeProperty('--bg-alt');
+          document.body.style.color='#e6eef8';
+          dot.style.background='#fff';
         }
+      }
+      applyTheme(current);
+      toggle.addEventListener('click', ()=>{
+        const now = (localStorage.getItem('fcrc-theme')||'dark') === 'dark' ? 'light':'dark';
+        localStorage.setItem('fcrc-theme', now);
+        applyTheme(now);
       });
     })();
 
-    // DISCORD WIDGET same as before
+    // Fetch Discord widget API to show online members (uses public widget)
     async function loadDiscordWidget(){
-      const el=document.getElementById('discordWidget');
-      try{
-        const res=await fetch('https://discord.com/api/guilds/1397615724142268608/widget.json');
-        if(!res.ok) throw new Error();
-        const data=await res.json();
-        el.innerHTML=`<strong>${data.name}</strong><div>${data.presence_count} online</div>`;
-      }catch{ el.innerHTML='<iframe src="https://discord.com/widget?id=1397615724142268608&theme=dark" width="100%" height="200" frameborder="0"></iframe>'; }
+      const el = document.getElementById('discordWidget');
+      try {
+        const res = await fetch('https://discord.com/api/guilds/1397615724142268608/widget.json');
+        if(!res.ok) throw new Error('No widget');
+        const data = await res.json();
+        const name = data.name || 'Farleigh County';
+        const count = data.presence_count || 0;
+        const channels = (data.channels || []).slice(0,5);
+        el.innerHTML = `<strong>${name}</strong><div style="margin-top:6px;color:var(--muted)">${count} online</div>
+          <div style="margin-top:8px">${channels.map(c=>`<div style="font-size:13px;color:var(--muted)">${c.name}</div>`).join('')}</div>
+          <div style="margin-top:8px"><a href="https://discord.gg/KzUYBUUzMr" target="_blank" style="color: #dbeeff">Join our Discord</a></div>`;
+      } catch(e){
+        // fallback iframe widget
+        el.innerHTML = `<iframe src="https://discord.com/widget?id=1397615724142268608&theme=dark" width="100%" height="200" allowtransparency="true" frameborder="0"></iframe>`;
+      }
     }
     loadDiscordWidget();
 
-    // EVENTS FETCH (mirroring)
+    // ANNOUNCEMENTS: placeholder for a live JSON feed
+    // If you set up a webhook->sheet->json pipeline, change the URL below to the JSON feed.
     (async function(){
-      const eventsEl=document.getElementById('eventsArea');
-      const EVENTS_JSON=''; // TODO: set up webhook -> JSON
-      if(!EVENTS_JSON){ eventsEl.innerText='No events mirrored yet.'; return; }
+      const announcementsEl = document.getElementById('announcements');
+      // Replace this with your hosted announcements JSON if you set one up.
+      const ANNOUNCE_JSON = ''; // e.g. 'https://yourdomain.com/announcements.json'
+      if(!ANNOUNCE_JSON){ announcementsEl.innerText = 'No announcements mirrored yet.'; return; }
       try{
-        const r=await fetch(EVENTS_JSON); const j=await r.json();
-        const cutoff=Date.now()-7*24*60*60*1000;
-        eventsEl.innerHTML=j.filter(m=>new Date(m.timestamp).getTime()>cutoff)
-          .map(m=>`<div><strong>${m.title||'Event'}</strong><div>${m.body||m.message}</div></div>`).join('');
-      }catch{ eventsEl.innerText='Unable to load events.'; }
-    })();
-
-    // ANNOUNCEMENTS FETCH
-    (async function(){
-      const announcementsEl=document.getElementById('announcements');
-      const ANNOUNCE_JSON=''; // TODO: set up webhook -> JSON
-      if(!ANNOUNCE_JSON){ announcementsEl.innerText='No announcements mirrored yet.'; return; }
-      try{
-        const r=await fetch(ANNOUNCE_JSON); const j=await r.json();
-        const cutoff=Date.now()-10.5*24*60*60*1000;
-        announcementsEl.innerHTML=j.filter(m=>new Date(m.timestamp).getTime()>cutoff)
-          .map(a=>`<div><strong>${a.title||'Announcement'}</strong><div>${a.body||a.message}</div></div>`).join('');
-      }catch{ announcementsEl.innerText='Unable to load announcements.'; }
+        const r = await fetch(ANNOUNCE_JSON);
+        const j = await r.json();
+        if(!Array.isArray(j) || j.length===0){ announcementsEl.innerText = 'No announcements at this time.'; return; }
+        announcementsEl.innerHTML = j.slice(0,5).map(a=>`<div style="padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03)"><strong>${a.title||'Announcement'}</strong><div style="color:var(--muted);margin-top:6px">${a.body||a.message}</div></div>`).join('');
+      }catch(e){
+        announcementsEl.innerText = 'Unable to load announcements.';
+      }
     })();
   </script>
 </body>
