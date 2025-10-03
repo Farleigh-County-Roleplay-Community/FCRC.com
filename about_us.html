@@ -4,150 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farleigh County Roleplay - About Us</title>
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" href="images/logo.png" type="image/png">
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b, #ff6b35);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-      color: #f0f0f0;
-    }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1e2a38, #13202e, #1e2a38);
+      color: #fff;
+      line-height: 1.6;
     }
     header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #ff6b35;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.2rem;
-      color: #cccccc;
-    }
-    header a {
-      display: inline-block;
-      margin-top: 15px;
-      text-decoration: none;
-      background: #ff6b35;
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    header a:hover {
-      background: #ff7b47;
-    }
-    section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-    section h2 {
-      color: #ff6b35;
-      margin-bottom: 15px;
-    }
-    .diagram {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .diagram-box {
-      flex: 1 1 calc(30% - 20px);
-      min-width: 220px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 15px;
+    header img {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: rgba(255, 165, 0, 0.3);
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #13202e;
+      border-radius: 10px;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #fff;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255, 165, 0, 0.2);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .hero {
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: 0.3s;
+      padding: 4rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/webbanner.png") center/cover;
     }
-    .diagram-box:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.12);
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .content {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+    }
+    .section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
     footer {
+      background: rgba(0,0,0,0.7);
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.5);
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+    footer img {
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>About Us</h1>
-    <p>Learn more about who we are</p>
-    <a href="index.html">⬅ Home</a>
+    <div>
+      <img src="images/logo.png" alt="FCRC Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About</a>
+      <a href="rules.html">Rules</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="social_media.html">Social Media</a>
+      <a href="faq.html">FAQ</a>
+      <div class="dropdown">
+        <a href="#">More ▾</a>
+        <div class="dropdown-content">
+          <a href="store.html">Store</a>
+          <a href="ownership.html">Ownership</a>
+          <a href="applications.html">Applications</a>
+          <a href="chain_of_command.html">Chain of Command</a>
+          <a href="merch.html">Merch</a>
+        </div>
+      </div>
+    </nav>
+    <a href="https://discord.gg/KzUYBUUzMr" target="_blank" style="background: orange; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; color: #000; font-weight: bold;">Join Discord</a>
   </header>
 
-  <section>
-    <h2>About Our Server</h2>
-    <p>
-      Farleigh County Roleplay Community (FCRC) was created to redefine what a high-quality ER:LC experience can be. 
-      Our server is built around the idea that roleplay should be immersive, structured, and rewarding, while still providing 
-      room for creativity and freedom. We aim to give players a professional yet enjoyable environment where every session feels unique 
-      and every interaction leaves a lasting impression.
-    </p>
-    <p>
-      What sets FCRC apart is its dedication to detail. With a committed staff team, daily server start-ups, and resources designed 
-      to elevate gameplay, we place emphasis on both realism and fun. Whether you are a long-time roleplayer or a newcomer just beginning 
-      your journey, FCRC offers a platform where you can learn, grow, and contribute to a thriving roleplay ecosystem.
-    </p>
+  <section class="hero">
+    <h1>About Us</h1>
+    <p>Learn more about our journey and vision for Farleigh County Roleplay.</p>
   </section>
 
-  <section>
-    <h2>Our Goals, Targets, and Core Values</h2>
-    <p>
-      FCRC is driven by a clear mission: to establish a community that goes beyond being “just another server.” 
-      We want to build a network of players who share the same enthusiasm for immersive roleplay, fairness, and innovation.
-    </p>
-    <div class="diagram">
-      <div class="diagram-box"><strong>Professionalism</strong><br> High standards of fairness and respect in all interactions.</div>
-      <div class="diagram-box"><strong>Innovation</strong><br> Fresh ideas, systems, and events introduced regularly.</div>
-      <div class="diagram-box"><strong>Community First</strong><br> Members are at the heart of every decision.</div>
-      <div class="diagram-box"><strong>Realism & Immersion</strong><br> Scenarios reflect lifelike yet engaging conditions.</div>
-      <div class="diagram-box"><strong>Growth & Legacy</strong><br> Every story contributes to the history of FCRC.</div>
+  <div class="content">
+    <div class="section">
+      <h2>About Our Server</h2>
+      <p>Farleigh County Roleplay Community (FCRC) is more than just another ER:LC server — it is a vision brought to life. Founded with the mission of creating an immersive, professional, and welcoming environment, FCRC has quickly risen as one of the most ambitious communities in the roleplay world. Every session is designed with dedication, professionalism, and creativity, ensuring that every member feels part of something greater than just a game.</p>
+      <p>We pride ourselves on offering a server that balances realism and fun, combining structure with freedom, and giving each member the opportunity to thrive in a community built on trust, respect, and excellence.</p>
     </div>
-  </section>
 
-  <section>
-    <h2>About Our Fictional County</h2>
-    <p>
-      Farleigh County is a fictional Canadian-inspired region, located in the southeastern corner of Saskatchewan. 
-      The county’s design is rooted in the layout of the ER:LC map, but it has been reimagined to provide a realistic yet 
-      flexible environment for roleplay.
-    </p>
-    <p>
-      The landscape reflects a balance of rural and urban life: sprawling highways that cut through farmlands and open plains, 
-      small towns full of character, and urban centers that serve as the county’s beating heart. Natural features such as forests, 
-      lakes, and hills make the setting diverse and immersive for scenarios of all types.
-    </p>
-    <p>
-      Farleigh County is more than just a map; it is the foundation of our community’s identity and a living space where 
-      imagination meets realism.
-    </p>
-  </section>
+    <div class="section">
+      <h2>Our Goals, Targets & Core Values</h2>
+      <p>Our core values are built on professionalism, fairness, and ambition. We aim to set the gold standard for ER:LC servers, inspiring both newcomers and long-term players. Our targets include steady community growth, consistent session quality, and innovative roleplay scenarios. We believe in pushing the boundaries of creativity, ensuring that every day spent in FCRC is one of excitement, belonging, and excellence.</p>
+      <p>We hold ourselves accountable to the highest standards of staff integrity, member respect, and server management. Our long-term vision is to become a beacon in the ER:LC community — a name that stands synonymous with quality, commitment, and innovation.</p>
+    </div>
+
+    <div class="section">
+      <h2>About Our Fictional County</h2>
+      <p>Farleigh County is a fictional Canadian county, inspired by the landscapes and culture of southeastern Saskatchewan. This county was crafted to bring depth, history, and identity to our roleplay. From rolling fields to rural highways and bustling towns, every aspect of Farleigh is designed to immerse members into a world that feels both authentic and dynamic. The county serves as a living backdrop for all our roleplay experiences, a place where stories unfold, communities grow, and legacies are written.</p>
+    </div>
+  </div>
 
   <footer>
-    © 2025 FCRC | All Rights Reserved
+    <p><img src="images/logo.png" alt="Logo"> © 2025 Farleigh County Roleplay Community. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
-
