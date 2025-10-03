@@ -76,17 +76,35 @@
     }
     nav.main-nav a:hover{ background: linear-gradient(90deg, rgba(255,138,0,0.08), rgba(43,107,255,0.06)); transform:translateY(-2px) }
 
-    /* More dropdown */
-    .more{ position:relative; }
-    .more .dropdown{
-      position:absolute; top:44px; left:0; min-width:220px; background:var(--card);
-      border-radius:10px; padding:8px; border:1px solid var(--glass-border);
-      box-shadow: 0 8px 40px rgba(2,6,23,0.6); display:none;
-      backdrop-filter: blur(8px);
-    }
-    .more:hover .dropdown{ display:block; }
-    .dropdown a{ display:block; padding:10px; color:#dbeeff; text-decoration:none; border-radius:8px; font-size:14px }
-    .dropdown a:hover{ background:rgba(255,255,255,0.02) }
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(2,16,40,0.6); /* transparent version */
+  backdrop-filter: blur(10px);    /* smooth blur effect */
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  min-width: 180px;
+  z-index: 2000;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Hover effect — works on the whole parent */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
     .controls{ display:flex; gap:12px; align-items:center }
     .btn-discord{
