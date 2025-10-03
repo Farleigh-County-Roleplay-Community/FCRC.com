@@ -166,6 +166,21 @@
       .section-grid{ grid-template-columns: 1fr }
       .departments{ grid-template-columns: 1fr }
     }
+header {
+  position: relative;
+  z-index: 1000; /* keeps header above everything */
+}
+
+.dropdown-content {
+  position: absolute;
+  background: rgba(2,16,40,0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  min-width: 180px;
+  z-index: 2000; /* ensures dropdown is above cards */
+}    
   </style>
 </head>
 <body>
