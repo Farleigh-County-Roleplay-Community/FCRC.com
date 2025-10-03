@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Farleigh County Roleplay Community</title>
+  <title>About Us - Farleigh County Roleplay Community</title>
   <link rel="icon" href="images/logo.png" />
-  <meta name="description" content="Farleigh County Roleplay — immersive, realistic RP community." />
+  <meta name="description" content="Learn more about Farleigh County Roleplay — our values, goals, and community." />
   <style>
-    /* ===== Base / Reset ===== */
+    /* Copy of the same design system from index.html */
     :root{
       --bg-dark:#061025;
       --bg-alt:#08132a;
-      --accent1:#ff8a00; /* orange */
-      --accent2:#2b6bff; /* pale-darkish blue */
+      --accent1:#ff8a00;
+      --accent2:#2b6bff;
       --glass: rgba(255,255,255,0.04);
       --muted: rgba(255,255,255,0.6);
       --card: rgba(255,255,255,0.03);
@@ -23,153 +23,70 @@
       --text-glow: 0 8px 30px rgba(59,130,246,0.08);
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
     body{
       min-height:100vh;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
       background: radial-gradient(1000px 1000px at 10% 10%, rgba(43,107,255,0.06), transparent),
                   linear-gradient(120deg, #02040a 0%, #071124 40%, #000000 100%);
       color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      overflow-y:auto;
     }
+    .bg-anim{ position:fixed; inset:0; z-index:-2; background: conic-gradient(from 180deg at 50% 50%, #071124, #021028, #0b1b3a, #071124);
+      opacity:0.55; filter:blur(60px); animation:spin 30s linear infinite; }
+    @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* Animated background gradient layers */
-    .bg-anim{
-      position:fixed; inset:0; z-index:-2;
-      background: conic-gradient(from 180deg at 50% 50%, #071124, #021028, #0b1b3a, #071124);
-      opacity:0.55; filter:blur(60px);
-      animation:spin 30s linear infinite;
-      transform-origin:center;
-      pointer-events:none;
-    }
-    @keyframes spin{ to{ transform: rotate(360deg); } }
-
-    /* container */
     .wrap{ max-width:var(--maxwidth); margin:28px auto; padding:18px; }
 
-    /* Header / nav */
     header.site-header{
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border: 1px solid var(--glass-border);
       border-radius: 12px;
       padding:12px 18px;
       display:flex; align-items:center; gap:18px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-    }
+    .brand{ display:flex; align-items:center; gap:12px; }
     .brand img{ width:56px; height:56px; border-radius:10px; object-fit:contain; }
-    .brand h1{
-      font-size:18px; letter-spacing:0.6px; margin-bottom: -2px;
-      text-shadow: 0 6px 22px rgba(255,138,0,0.06);
-    }
+    .brand h1{ font-size:18px; letter-spacing:0.6px; text-shadow: 0 6px 22px rgba(255,138,0,0.06); }
     .brand p{ font-size:12px; color:var(--muted) }
 
-    nav.main-nav{ margin-left:12px; display:flex; gap:10px; align-items:center; flex:1 }
-    nav.main-nav a{
-      color: #cfe7ff; text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; font-size:14px;
-      transition: all .18s ease;
-    }
-    nav.main-nav a:hover{ background: linear-gradient(90deg, rgba(255,138,0,0.08), rgba(43,107,255,0.06)); transform:translateY(-2px) }
-
-    /* More dropdown */
-    .more{ position:relative; }
-    .more .dropdown{
-      position:absolute; top:44px; left:0; min-width:220px; background:var(--card);
-      border-radius:10px; padding:8px; border:1px solid var(--glass-border);
-      box-shadow: 0 8px 40px rgba(2,6,23,0.6); display:none;
-      backdrop-filter: blur(8px);
-    }
-    .more:hover .dropdown{ display:block; }
-    .dropdown a{ display:block; padding:10px; color:#dbeeff; text-decoration:none; border-radius:8px; font-size:14px }
-    .dropdown a:hover{ background:rgba(255,255,255,0.02) }
-
-    .controls{ display:flex; gap:12px; align-items:center }
     .btn-discord{
+      margin-left:auto;
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px; border:none; box-shadow: var(--text-glow);
-      cursor:pointer; text-decoration:none;
+      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px;
+      text-decoration:none; box-shadow: var(--text-glow);
     }
-    .toggle {
-      width:46px; height:28px; background:rgba(255,255,255,0.03); border-radius:20px; padding:4px;
-      display:flex; align-items:center; gap:6px; border:1px solid rgba(255,255,255,0.04);
-      cursor:pointer;
-    }
-    .toggle .dot{ width:18px; height:18px; background:#fff;border-radius:50%; box-shadow: 0 6px 18px rgba(43,107,255,0.08) }
 
-    /* HERO */
     .hero{
       margin-top:20px;
-      display:grid; grid-template-columns: 1fr; gap:20px; align-items:start;
-      padding:26px; border-radius:16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:26px; border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid var(--glass-border); backdrop-filter: blur(10px);
     }
-    .hero-inner{ display:flex; gap:22px; align-items:center; }
-    .hero-text h2{
-      font-size:48px; line-height:1; letter-spacing:-1px;
+    .hero h2{
+      font-size:42px; line-height:1.1;
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
       -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 18px 40px rgba(43,107,255,0.06);
     }
-    .hero-text p.lead{ margin-top:10px; color:var(--muted); font-size:16px }
-    .hero-cta{ margin-top:18px; display:flex; gap:12px; }
-    .cta-primary{ padding:12px 20px; border-radius:12px; background:linear-gradient(90deg,var(--accent1),#ffb36b); color:#021028; font-weight:800; text-decoration:none }
-    .cta-secondary{ padding:10px 16px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted); text-decoration:none }
+    .hero p{ margin-top:12px; color:var(--muted); font-size:16px }
 
-    .stats-row{ margin-top:18px; display:flex; gap:14px; flex-wrap:wrap }
-    .stat{
-      min-width:160px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px; padding:12px; border:1px solid rgba(255,255,255,0.02);
-      display:flex; gap:12px; align-items:center;
-    }
-    .stat .ico{ width:48px; height:48px; border-radius:10px; background:linear-gradient(90deg,var(--accent2),var(--accent1)); display:flex; align-items:center; justify-content:center; font-weight:900 }
-    .stat .txt{ font-size:14px; color:var(--muted) }
-    .stat strong{ display:block; color:#fff; font-size:18px; margin-top:2px }
-
-    /* sections */
-    .section-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; margin-top:20px }
     .card{
-      background:var(--card); padding:16px; border-radius:14px; border:1px solid var(--glass-border); min-height:120px;
+      background:var(--card); padding:16px; border-radius:14px;
+      border:1px solid var(--glass-border); margin-top:18px;
       box-shadow: 0 6px 30px rgba(2,6,23,0.6);
     }
     .card h3{ margin-bottom:8px; color:#fff }
-    .card p{ color:var(--muted); font-size:14px; line-height:1.45 }
+    .card p{ color:var(--muted); font-size:14px; line-height:1.5 }
 
-    /* departments & rules */
-    .departments{ margin-top:18px; display:grid; grid-template-columns: repeat(4, 1fr); gap:14px }
-    .dept-card{ background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.02) }
-    .rules{ margin-top:20px; padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006)); border:1px solid rgba(255,255,255,0.02) }
-
-    /* events */
-    .events{ margin-top:18px; min-height:60px; color:var(--muted); display:flex; align-items:center; justify-content:center }
-
-    /* footer */
     footer.site-footer{
       margin-top:36px; padding:22px; border-radius:12px; text-align:center; color:var(--muted);
-      border:1px solid rgba(255,255,255,0.02); background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))
+      border:1px solid rgba(255,255,255,0.02);
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
     }
     footer .small{ font-size:13px }
-
-    /* responsive */
-    @media (max-width:1000px){
-      .section-grid{ grid-template-columns: 1fr 1fr }
-      .departments{ grid-template-columns: repeat(2,1fr) }
-      .hero-text h2{ font-size:36px }
-    }
-    @media (max-width:640px){
-      header.site-header{ flex-direction:column; align-items:flex-start }
-      nav.main-nav{ flex-wrap:wrap; gap:6px }
-      .section-grid{ grid-template-columns: 1fr }
-      .departments{ grid-template-columns: 1fr }
-    }
   </style>
 </head>
 <body>
-  <div class="bg-anim" aria-hidden="true"></div>
+  <div class="bg-anim"></div>
 
   <div class="wrap">
     <!-- HEADER -->
@@ -181,30 +98,36 @@
           <p>Realism • Integrity • Immersion</p>
         </div>
       </div>
+      <a class="btn-discord" href="https://discord.gg/KzUYBUUzMr" target="_blank">Join Discord</a>
+    </header>
 
+    <!-- HERO -->
+    <section class="hero">
+      <h2>About Us</h2>
+      <p>Discover the vision, mission, and values that make Farleigh County Roleplay Community stand apart.</p>
+    </section>
 
-  <div class="content">
-    <div class="section">
-      <h2>About Our Server</h2>
-      <p>Farleigh County Roleplay Community (FCRC) is more than just another ER:LC server — it is a vision brought to life. Founded with the mission of creating an immersive, professional, and welcoming environment, FCRC has quickly risen as one of the most ambitious communities in the roleplay world. Every session is designed with dedication, professionalism, and creativity, ensuring that every member feels part of something greater than just a game.</p>
-      <p>We pride ourselves on offering a server that balances realism and fun, combining structure with freedom, and giving each member the opportunity to thrive in a community built on trust, respect, and excellence.</p>
+    <!-- ABOUT CONTENT -->
+    <div class="card">
+      <h3>Our Community</h3>
+      <p>Farleigh County Roleplay Community (FCRC) is more than just a server. It is a vision of realistic, immersive roleplay that combines structure, creativity, and a welcoming environment. We aim to bring players together under shared values of fairness, integrity, and professionalism.</p>
     </div>
 
-    <div class="section">
-      <h2>Our Goals, Targets & Core Values</h2>
-      <p>Our core values are built on professionalism, fairness, and ambition. We aim to set the gold standard for ER:LC servers, inspiring both newcomers and long-term players. Our targets include steady community growth, consistent session quality, and innovative roleplay scenarios. We believe in pushing the boundaries of creativity, ensuring that every day spent in FCRC is one of excitement, belonging, and excellence.</p>
-      <p>We hold ourselves accountable to the highest standards of staff integrity, member respect, and server management. Our long-term vision is to become a beacon in the ER:LC community — a name that stands synonymous with quality, commitment, and innovation.</p>
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>We believe in setting the gold standard for ER:LC roleplay. Our mission is to offer high-quality, structured sessions while maintaining a fun, engaging atmosphere. Every member of FCRC is valued, and every story adds to the county’s legacy.</p>
     </div>
 
-    <div class="section">
-      <h2>About Our Fictional County</h2>
-      <p>Farleigh County is a fictional Canadian county, inspired by the landscapes and culture of southeastern Saskatchewan. This county was crafted to bring depth, history, and identity to our roleplay. From rolling fields to rural highways and bustling towns, every aspect of Farleigh is designed to immerse members into a world that feels both authentic and dynamic. The county serves as a living backdrop for all our roleplay experiences, a place where stories unfold, communities grow, and legacies are written.</p>
+    <div class="card">
+      <h3>Our County</h3>
+      <p>Farleigh County is a fictional Canadian county inspired by the landscapes of southeastern Saskatchewan. Its identity gives depth and realism to every roleplay, from bustling towns to open roads and everything in between.</p>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div><img src="images/logo.png" alt="logo" style="height:20px; vertical-align:middle"> 
+      <span class="small">© FCRC 2025 — All rights reserved</span></div>
+    </footer>
   </div>
-
-  <footer>
-    <p><img src="images/logo.png" alt="Logo"> © 2025 Farleigh County Roleplay Community. All Rights Reserved.</p>
-  </footer>
-
 </body>
 </html>
