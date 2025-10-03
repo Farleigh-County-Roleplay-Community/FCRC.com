@@ -49,11 +49,35 @@
     .brand h1{ font-size:18px; letter-spacing:0.6px; text-shadow: 0 6px 22px rgba(255,138,0,0.06); }
     .brand p{ font-size:12px; color:var(--muted) }
 
+    .btn-home {
+      background: transparent;
+      color: #e6eef8;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid var(--glass-border);
+      margin-left: auto;
+      margin-right: 10px;
+      transition: all 0.2s ease;
+    }
+    .btn-home:hover {
+      background: var(--accent1);
+      color: #021028;
+      box-shadow: var(--text-glow);
+    }
+
+    
     .btn-discord{
       margin-left:auto;
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
       color:#021028; font-weight:800; padding:8px 14px; border-radius:10px;
       text-decoration:none; box-shadow: var(--text-glow);
+    }
+    .btn-discord:hover {
+      background: var(--accent1);
+      color: #021028;
+      box-shadow: var(--text-glow);
     }
 
     .hero{
@@ -116,6 +140,7 @@
           <p>Realism • Integrity • Immersion</p>
         </div>
       </div>
+      <a class="btn-home" href="index.html">Home</a>
       <a class="btn-discord" href="https://discord.gg/KzUYBUUzMr" target="_blank">Join Discord</a>
     </header>
 
