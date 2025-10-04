@@ -1,142 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farleigh County Roleplay - Rules</title>
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rules - Farleigh County Roleplay Community</title>
+  <link rel="icon" href="images/logo.png" />
+  <meta name="description" content="Read the official rules for Farleigh County Roleplay Community — in-game and Discord guidelines." />
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #021028, #042b55, #f8a13f);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
+    :root{
+      --bg-dark:#061025;
+      --bg-alt:#08132a;
+      --accent1:#ff8a00;
+      --accent2:#2b6bff;
+      --glass: rgba(255,255,255,0.04);
+      --muted: rgba(255,255,255,0.6);
+      --card: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --blur: 18px;
+      --maxwidth: 1200px;
+      --glass-border: rgba(255,255,255,0.06);
+      --text-glow: 0 8px 30px rgba(59,130,246,0.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient(1000px 1000px at 10% 10%, rgba(43,107,255,0.06), transparent),
+                  linear-gradient(120deg, #02040a 0%, #071124 40%, #000000 100%);
+      color:#e6eef8;
+    }
+    .bg-anim{ position:fixed; inset:0; z-index:-2; background: conic-gradient(from 180deg at 50% 50%, #071124, #021028, #0b1b3a, #071124);
+      opacity:0.55; filter:blur(60px); animation:spin 30s linear infinite; }
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .wrap{ max-width:var(--maxwidth); margin:28px auto; padding:18px; }
+
+    header.site-header{
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding:12px 18px;
+      display:flex; align-items:center; gap:18px;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand img{ width:56px; height:56px; border-radius:10px; object-fit:contain; }
+    .brand h1{ font-size:18px; letter-spacing:0.6px; text-shadow: 0 6px 22px rgba(255,138,0,0.06); }
+    .brand p{ font-size:12px; color:var(--muted) }
+
+    .btn-home {
+      margin-left:auto;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px;
+      text-decoration:none; box-shadow: var(--text-glow);
+    }
+    .btn-home:hover {
+      background: var(--accent1);
+      color: #021028;
+      box-shadow: var(--text-glow);
     }
 
-    @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    .btn-discord{
+      margin-right:auto;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#021028; font-weight:800; padding:8px 14px; border-radius:10px;
+      text-decoration:none; box-shadow: var(--text-glow);
+    }
+    .btn-discord:hover {
+      background: var(--accent1);
+      color: #021028;
+      box-shadow: var(--text-glow);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 100px auto;
-      padding: 0 20px;
+    .hero{
+      margin-top:20px;
+      padding:26px; border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border); backdrop-filter: blur(10px);
     }
+    .hero h2{
+      font-size:42px; line-height:1.1;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero p{ margin-top:12px; color:var(--muted); font-size:16px }
 
-    .box {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      backdrop-filter: blur(12px);
-      padding: 30px;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
-      margin-bottom: 40px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .card{
+      background:var(--card); padding:16px; border-radius:14px;
+      border:1px solid var(--glass-border); margin-top:18px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
     }
-
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #ffb84d;
-    }
+    .card h2{ margin-bottom:8px; color:#fff }
+    .card p{ color:var(--muted); font-size:14px; line-height:1.5 }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      background: rgba(255,255,255,0.05);
+      margin-top: 16px;
+      background: rgba(255,255,255,0.02);
       border-radius: 12px;
       overflow: hidden;
-      margin-top: 20px;
     }
-
     th, td {
-      padding: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 14px;
       text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+      color: #e6eef8;
     }
-
     th {
-      background: rgba(255,255,255,0.1);
-      color: #f8a13f;
+      background: rgba(255,255,255,0.05);
+      color: var(--accent1);
       font-weight: 600;
     }
-
-    tr:hover {
-      background: rgba(255,255,255,0.07);
-    }
+    tr:hover { background: rgba(255,255,255,0.05); }
 
     .footer {
       text-align: center;
       margin: 50px 0 30px;
       color: rgba(255,255,255,0.6);
     }
+
+    /* Scrollable table on mobile */
+    .table-container {
+      overflow-x: auto;
+      border-radius: var(--radius);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    
-    <div class="box">
-      <h1>Server Rules & Regulations</h1>
-      <p>Welcome to Farleigh County Roleplay Community! These rules ensure everyone enjoys a fair, respectful, and immersive experience. All players and members must follow these rules in both Discord and in-game. Failure to comply may result in disciplinary action. Remember: roleplay realism and respect form the foundation of our community.</p>
+  <div class="bg-anim"></div>
+
+  <div class="wrap">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="brand">
+        <img src="images/logo.png" alt="FCRC logo">
+        <div>
+          <h1>Farleigh County Roleplay</h1>
+          <p>Realism • Integrity • Immersion</p>
+        </div>
+      </div>
+      <a class="btn-home" href="index.html">Home</a>
+      <a class="btn-discord" href="https://discord.gg/KzUYBUUzMr" target="_blank">Join Discord</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h2>Community Rules</h2>
+      <p>These rules ensure a safe, fair, and enjoyable experience for everyone in Farleigh County Roleplay. Please take the time to read and understand them before participating in any session or activity.</p>
+    </section>
+
+    <!-- GAME RULES -->
+    <div class="card">
+      <h2>In-Game Rules</h2>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Rule</th>
+            <th>What It Is</th>
+            <th>Example</th>
+          </tr>
+          <tr><td>General Conduct</td><td>Respect all players and staff; avoid exploits and glitches.</td><td>Following staff instructions.</td></tr>
+          <tr><td>VDM</td><td>Don't run over players without RP reason.</td><td>Intentionally hitting people with vehicles.</td></tr>
+          <tr><td>RDM</td><td>No killing without valid RP initiation.</td><td>Shooting players for no reason.</td></tr>
+          <tr><td>FRP</td><td>Value your life in every situation.</td><td>Pulling a weapon while surrounded.</td></tr>
+          <tr><td>NLR</td><td>Don't return to RP scenes after death.</td><td>Rejoining the same shootout.</td></tr>
+          <tr><td>Powergaming</td><td>Don’t force actions on others.</td><td>"/me stabs you and you die instantly."</td></tr>
+          <tr><td>Metagaming</td><td>No OOC information in RP.</td><td>Using Discord info to locate players.</td></tr>
+          <tr><td>LTAP / LTAR / LTAA</td><td>Don’t leave to avoid RP, arrest, or punishment.</td><td>Leaving mid-arrest or during punishment.</td></tr>
+          <tr><td>Crime Regulations</td><td>Major crimes must follow cooldowns; no terrorism or mass events.</td><td>Planning mass attacks is not allowed.</td></tr>
+          <tr><td>Emergency Services</td><td>Act professionally and follow department rules.</td><td>Abusing department commands or tools.</td></tr>
+          <tr><td>Roleplay Standards</td><td>Keep RP realistic and immersive.</td><td>Ignoring injuries or refusing to RP.</td></tr>
+          <tr><td>Scene Interruption</td><td>Don’t interfere with ongoing RP scenes.</td><td>Disrupting active law enforcement roleplays.</td></tr>
+          <tr><td>Roblox ToS</td><td>Follow Roblox Terms of Service.</td><td>No NSFW content or exploits.</td></tr>
+          <tr><td>Enforcement</td><td>Staff decisions are final; appeals available.</td><td>Submitting appeals properly.</td></tr>
+        </table>
+      </div>
     </div>
 
-    <div class="box">
-      <h2>Game Rules</h2>
-      <table>
-        <tr>
-          <th>Rule</th>
-          <th>What It Is</th>
-          <th>Example</th>
-        </tr>
-
-        <tr><td>General Conduct</td><td>Respect players and staff. No exploiting or using mods.</td><td>Follow staff orders, avoid glitches.</td></tr>
-        <tr><td>VDM</td><td>Don’t intentionally hit players with vehicles.</td><td>Ramming people without RP reason.</td></tr>
-        <tr><td>RDM</td><td>Don’t attack or kill without valid RP reason.</td><td>Shooting someone without dialogue or context.</td></tr>
-        <tr><td>FRP</td><td>Value your character’s life realistically.</td><td>Pulling a gun while surrounded.</td></tr>
-        <tr><td>NLR</td><td>Can’t return to a scene after death.</td><td>Rejoining a shootout after dying.</td></tr>
-        <tr><td>Powergaming</td><td>Don’t force outcomes on others.</td><td>“/me kills you instantly.”</td></tr>
-        <tr><td>Metagaming</td><td>Don’t use OOC info in RP.</td><td>Using Discord info to find someone IC.</td></tr>
-        <tr><td>LTAP / LTAR / LTAA</td><td>Don’t leave to avoid RP, arrest, or punishment.</td><td>Leaving mid-arrest.</td></tr>
-        <tr><td>Crime Regulations</td><td>Crimes must remain realistic and follow cooldowns.</td><td>Large-scale crimes or terrorism are banned.</td></tr>
-        <tr><td>Emergency Services</td><td>Act professionally in departments.</td><td>Abusing police or EMS tools.</td></tr>
-        <tr><td>Roleplay Standards</td><td>RP must stay realistic and serious.</td><td>Ignoring injuries or breaking character.</td></tr>
-        <tr><td>Scene Interruption</td><td>Don’t interfere with other RP scenes.</td><td>Trolling active police scenes.</td></tr>
-        <tr><td>Roblox ToS</td><td>Follow all Roblox rules.</td><td>Posting NSFW or using exploits.</td></tr>
-        <tr><td>Enforcement</td><td>Staff decisions are final. Appeals allowed.</td><td>Using the appeal system properly.</td></tr>
-      </table>
-    </div>
-
-    <div class="box">
+    <!-- DISCORD RULES -->
+    <div class="card">
       <h2>Discord Rules</h2>
-      <table>
-        <tr>
-          <th>Rule</th>
-          <th>What It Is</th>
-          <th>Example</th>
-        </tr>
-
-        <tr><td>General Conduct</td><td>Respect all members and staff.</td><td>No harassment or impersonation.</td></tr>
-        <tr><td>Channels & Content</td><td>Use correct channels and keep content appropriate.</td><td>Posting NSFW content or off-topic spam.</td></tr>
-        <tr><td>Spamming & Advertising</td><td>No spam or self-promotion.</td><td>Advertising another server.</td></tr>
-        <tr><td>Voice Channels</td><td>Keep voice chat clean and respectful.</td><td>Background noise or shouting.</td></tr>
-        <tr><td>Roleplay & OOC Conduct</td><td>Keep IC and OOC info separate.</td><td>Sharing RP details in OOC chats.</td></tr>
-        <tr><td>Punishments & Appeals</td><td>Staff decisions are final; use appeal system.</td><td>Filing an appeal respectfully.</td></tr>
-        <tr><td>Compliance & ToS</td><td>Follow Discord & Roblox ToS at all times.</td><td>Exploiting or posting illegal content.</td></tr>
-      </table>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Rule</th>
+            <th>What It Is</th>
+            <th>Example</th>
+          </tr>
+          <tr><td>General Conduct</td><td>Be respectful; no harassment or impersonation.</td><td>Treating members fairly.</td></tr>
+          <tr><td>Channels & Content</td><td>Use correct channels; keep content appropriate.</td><td>Posting NSFW or spam messages.</td></tr>
+          <tr><td>Spamming & Advertising</td><td>No spam or external advertising.</td><td>Posting invite links.</td></tr>
+          <tr><td>Voice Channels</td><td>Keep VC clean and respectful.</td><td>Loud background noises.</td></tr>
+          <tr><td>Roleplay & OOC Conduct</td><td>Keep IC and OOC information separate.</td><td>Sharing RP info in OOC channels.</td></tr>
+          <tr><td>Punishments & Appeals</td><td>Staff decisions are final; appeals can be made.</td><td>Using proper appeal form.</td></tr>
+          <tr><td>Compliance & ToS</td><td>Follow Discord & Roblox ToS.</td><td>Posting illegal or exploitative content.</td></tr>
+        </table>
+      </div>
     </div>
 
-    <div class="footer">
-      © 2025 Farleigh County Roleplay Community | All Rights Reserved
-    </div>
-
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div><img src="images/logo.png" alt="logo" style="height:20px; vertical-align:middle"> 
+      <span class="small">© FCRC 2025 — All rights reserved</span></div>
+    </footer>
   </div>
 </body>
 </html>
-
