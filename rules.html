@@ -115,11 +115,22 @@
     }
     tr:hover { background: rgba(255,255,255,0.05); }
 
-    .footer {
-      text-align: center;
-      margin: 50px 0 30px;
-      color: rgba(255,255,255,0.6);
-    }
+footer.site-footer {
+  margin-top: 36px;
+  padding: 22px;
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--muted);
+  border: 1px solid var(--glass-border);
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+}
+
+footer .small {
+  font-size: 13px;
+}
+
 
     /* Scrollable table on mobile */
     .table-container {
@@ -201,10 +212,12 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
-      <div><img src="images/logo.png" alt="logo" style="height:20px; vertical-align:middle"> 
-      <span class="small">© FCRC 2025 — All rights reserved</span></div>
-    </footer>
+<footer class="site-footer">
+  <div>
+    <img src="images/logo.png" alt="logo" style="height:20px; vertical-align:middle">
+    <span class="small">© FCRC 2025 — All rights reserved</span>
+  </div>
+</footer>
   </div>
 </body>
 </html>
